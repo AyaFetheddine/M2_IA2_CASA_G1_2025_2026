@@ -12,7 +12,6 @@ class Vehicle {
     this.maxForce = 0.1;
     // rayon du véhicule
     this.r = 16;
-    
   }
 
   applyBehaviors(target) {
