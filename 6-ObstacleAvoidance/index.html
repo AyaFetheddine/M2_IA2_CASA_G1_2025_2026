@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obstacle Avoidance - Version Améliorée</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="obstacle.js"></script>
+    <script src="vehicle.js"></script>
+    <script src="vaisseau.js"></script>
+    <script src="wanderer.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+    <div id="info-panel">
+      <h3>🎮 Contrôles</h3>
+      <ul>
+        <li><b>Clic</b> : Ajouter un obstacle</li>
+        <li><b>Drag</b> : Ajouter plusieurs obstacles</li>
+        <li><b>v</b> : Ajouter un vaisseau poursuiveur</li>
+        <li><b>w</b> : Ajouter un véhicule wander (vert)</li>
+        <li><b>s</b> : Ajouter un véhicule rapide (rouge)</li>
+        <li><b>f</b> : Ajouter 10 vaisseaux en formation</li>
+        <li><b>m</b> : Mix de véhicules (11 au total)</li>
+        <li><b>d</b> : Basculer mode debug</li>
+        <li><b>c</b> : Effacer tous les obstacles</li>
+        <li><b>r</b> : Réinitialiser la scène</li>
+      </ul>
+      <h4>📝 Améliorations</h4>
+      <ul>
+        <li>✅ Évitement adaptatif à la vitesse</li>
+        <li>✅ 3 points de détection</li>
+        <li>✅ Prédiction position véhicules</li>
+        <li>✅ Cercles englobants dynamiques</li>
+        <li>✅ Comportement séparation</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -6,9 +6,12 @@ class Vehicle {
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
     this.maxSpeed = 10;
-    this.maxForce = 0.6;
+    this.maxForce = 1;
     this.r = 16;
+    this.currentHeading = 0; // Stocker l'angle courant du véhicule
+
     this.rayonZoneDeFreinage = 100;
+    this.arrivalThreshold = 5;
   }
 
   evade(vehicle) {
@@ -42,6 +45,12 @@ class Vehicle {
     let valueDesiredSpeed = this.maxSpeed;
 
     if (arrival) {
+      // si on est déja arrivé, on ne bouge plus
+      let distanceToTarget = p5.Vector.dist(this.pos, target);
+      if (distanceToTarget-d < this.arrivalThreshold) {
+        this.vel.set(0, 0);
+        return createVector(0, 0);
+      }
       // On définit un rayon de 100 pixels autour de la cible
       // si la distance entre le véhicule courant et la cible
       // est inférieure à ce rayon, on ralentit le véhicule
@@ -94,6 +103,11 @@ class Vehicle {
     this.vel.limit(this.maxSpeed);
     this.pos.add(this.vel);
     this.acc.set(0, 0);
+    
+    // Mettre à jour l'angle seulement si le véhicule bouge
+    if (this.vel.mag() > 0.5) {
+      this.currentHeading = this.vel.heading();
+    }
   }
 
   show() {
@@ -105,8 +119,7 @@ class Vehicle {
     strokeWeight(2);
     push();
     translate(this.pos.x, this.pos.y);
-    if(this.vel.mag() > 0)
-      rotate(this.vel.heading());
+    rotate(this.currentHeading); // Utiliser l'angle stocké
 
     triangle(-this.r, -this.r / 2, -this.r, this.r / 2, this.r, 0);
     pop();
@@ -141,6 +154,20 @@ class Target extends Vehicle {
     super(x, y);
     this.vel = p5.Vector.random2D();
     this.vel.mult(5);
+    this.isMoving = false;
+  }
+
+  // Donne une vitesse aléatoire à la cible pour qu'elle parte hors de l'écran
+  startMoving() {
+    this.isMoving = true;
+    this.vel = p5.Vector.random2D();
+    this.vel.mult(random(3, 8));
+  }
+
+  update() {
+    if (this.isMoving) {
+      this.pos.add(this.vel);
+    }
   }
 
   show() {

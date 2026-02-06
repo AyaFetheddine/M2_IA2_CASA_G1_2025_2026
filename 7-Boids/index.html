@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐟 Requin vs Poissons - Jeu Boids 🦈</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="boid.js"></script>
+    <script src="entities.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+    <div id="game-info">
+      <h2>🎮 Requin vs Poissons</h2>
+      <p>Un jeu basé sur les <strong>comportements Boids</strong> de Craig Reynolds</p>
+      
+      <h3>📖 Comportements IA</h3>
+      <ul>
+        <li><strong>Align</strong> : Les poissons s'alignent avec leurs voisins</li>
+        <li><strong>Cohesion</strong> : Les poissons restent groupés</li>
+        <li><strong>Separation</strong> : Les poissons évitent les collisions</li>
+        <li><strong>Boundaries</strong> : Confinement dans la zone</li>
+        <li><strong>Flee</strong> : Les poissons fuient le requin</li>
+        <li><strong>Wander</strong> : Le requin déambule aléatoirement</li>
+        <li><strong>Seek</strong> : Le requin poursuit les poissons</li>
+      </ul>
+      
+      <h3>🎯 But du jeu</h3>
+      <p>Observez le requin chasser le banc de poissons ! 
+         Ajoutez des poissons pour prolonger la partie.</p>
+    </div>
+  </body>
+</html>

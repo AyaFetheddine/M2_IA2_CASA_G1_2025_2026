@@ -1,0 +1,112 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0a1e3c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+#game-info {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, rgba(10, 30, 60, 0.95), rgba(20, 50, 80, 0.95));
+  color: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-size: 11px;
+  max-width: 250px;
+  z-index: 1000;
+  border: 1px solid rgba(78, 204, 163, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#game-info h2 {
+  margin: 0 0 10px 0;
+  color: #4ecca3;
+  font-size: 16px;
+  text-align: center;
+}
+
+#game-info h3 {
+  margin: 12px 0 6px 0;
+  color: #a8d8ff;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(168, 216, 255, 0.2);
+  padding-bottom: 3px;
+}
+
+#game-info p {
+  margin: 5px 0;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+#game-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#game-info li {
+  margin-bottom: 4px;
+  padding-left: 8px;
+  font-size: 10px;
+  color: #aaa;
+}
+
+#game-info li strong {
+  color: #4ecca3;
+}
+
+/* Styles pour les sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: linear-gradient(to right, #4ecca3, #2a9d8f);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #4ecca3;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #4ecca3;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* Styles pour les checkboxes */
+input[type="checkbox"] {
+  accent-color: #4ecca3;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Animation de pulsation pour le titre */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+#game-info h2 {
+  animation: pulse 2s ease-in-out infinite;
+}
